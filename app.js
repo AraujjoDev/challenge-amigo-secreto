@@ -8,17 +8,25 @@ function adicionarAmigo(){
     
 
     if (entrada == 0 ){
-        console.log("Por favor, insira um nome.");
+        alert("Por favor, insira um nome.");
     } else if (entrada < 0 || entrada > 0 ) {
-        console.log("Digite um nome")
+        alert("Digite um nome");
     }
     else {
         amigos.push(entrada);
+        
     }
-
+    console.log(amigos)   
+    limparCampo();
 }  
 
-function limparCampo(campo){
-    if (adicionarAmigo(campo.value))
-    campo.value = "";
+function limparCampo(){
+    entrada = document.querySelector('input');
+    entrada.value = "";
+}
+
+function atualizarLista(){
+    lista = document.getElementById(listaAmigos);
+    //lista.innerHTML = amigos;
+    lista.innerHTML = "";
 }
